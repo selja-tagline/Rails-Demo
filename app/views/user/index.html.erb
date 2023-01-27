@@ -1,0 +1,10 @@
+
+<h1>Hello,,,,</h1>
+<h3>Want to go Dashboard ??</h3>
+
+
+<% if admin_user_signed_in? %>
+    <%= link_to "Sign Out", destroy_admin_user_session_path %>
+<% else %>
+    <%= link_to "Sign In", new_admin_user_session_path %>
+<% end %>
