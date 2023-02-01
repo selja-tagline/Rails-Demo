@@ -58,7 +58,6 @@ group :development do
   gem "web-console"
   # gem 'pry-byebug'
   # gem 'pry-rails'
-  gem 'devise'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -73,3 +72,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem "omniauth-rails_csrf_protection"
+gem "activerecord-session_store"
