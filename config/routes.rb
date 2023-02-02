@@ -11,10 +11,11 @@ Rails.application.routes.draw do
 
   resources :admin_users
   # get 'admin_users/dashboard', to: 'user#dashboard'
-  # devise_scope :admin_users do
-  #   # get 'admin_users/', to: 'devise/sessions#new'
-  #   # get '/admin_users/sign_out', to: 'devise/sessions#destroy'
-  # end
+  devise_scope :admin_user do
+    # get 'admin_users/', to: 'devise/sessions#new'
+    # get '/admin_users/sign_out', to: 'devise/sessions#destroy'
+    get "/auth/facebook/callback", to: "admin_users/omniauth_callbacks#facebook"
+  end
 
   # devise_for :admin_users
  
@@ -29,6 +30,8 @@ Rails.application.routes.draw do
   scope module: 'admin_users' do     #/admin_users
     root "tests#index"
     resources :tests
+    # get 'admin_user/', to: 'admin_users/tests#show'
+    # get "/auth/facebook/callback", to: "admin_users/omniauth_callbacks#facebook"
   end
 
  

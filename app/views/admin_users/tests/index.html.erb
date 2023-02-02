@@ -1,9 +1,28 @@
 
+<h1>Welcome to my Demo</h1>
+<%= button_to "Login with Facebook", "/auth/facebook", method: :POST, data: { turbo: false} %><br />
 
+<h3>All Admin Users</h3>
+
+    <table style="border: 1px solid black;">
+        <tbody>
+            <tr>
+                <th style="border: 1px solid black;">User ID</th>
+                <th style="border: 1px solid black;">Email</th>
+                <th style="border: 1px solid black;">Action</th>
+            </tr>
+            <% @admin_users.each do |admin| %>
+            <tr style="border: 1px solid black;">
+                <%= render "admin_users/tests/admin", admin: admin %>
+                <td style="border: 1px solid black;"><%= link_to "Show this Admin", test_path(admin ) %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
 
 
 <% if admin_user_signed_in? %>
-    <h1>Hello,   <%= current_admin_user.email %></h1>
+    <h2>Hello,   <%= current_admin_user.email %></h2>
     <%= link_to "Sign Out", destroy_admin_user_session_path, data: { turbo_method: :delete } %>
 <% else %>
     <h1>Hello, </h1>

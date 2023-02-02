@@ -74,7 +74,5 @@ group :test do
 end
 
 gem 'devise'
-gem 'omniauth'
 gem 'omniauth-facebook'
 gem "omniauth-rails_csrf_protection"
-gem "activerecord-session_store"

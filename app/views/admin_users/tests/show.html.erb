@@ -1,8 +1,14 @@
-<%= render @admin_user %>
-<h1>Show</h1>
-<div>
-  <%= link_to "Edit this post" %> |
-  <%= link_to "Back to posts" %>
+<%# show admin user page %>
 
-  <%= button_to "Destroy this post" %>
+<p>User ID :<%= @admin_user.user_id %></p>
+<p>Email :<%= @admin_user.email %></p>
+
+<div>
+  <%= link_to "Edit this admin user", edit_test_path(@admin_user) %> |
+  <%= link_to "Back to admin users", tests_path %>
+</div><br />
+<div>
+  <%= button_to "Destroy this admin user", @admin_user, method: :delete %>
 </div>
+
+

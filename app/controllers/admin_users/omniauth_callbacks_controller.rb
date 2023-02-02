@@ -8,6 +8,16 @@ class AdminUsers::OmniauthCallbacksController < Devise::OmniauthCallbacksControl
   # def twitter
   # end
 
+  def facebook
+    p "::::: facebook def ::::"
+    p "Omniauth Callback hash: #{auth}"
+    redirect_to root_path, notice: "You Have Successfully Connected to #{auth..info.name}"
+  end
+
+  def auth 
+    request.env['omniauth.auth']
+  end
+
   # More info at:
   # https://github.com/heartcombo/devise#omniauth
 
