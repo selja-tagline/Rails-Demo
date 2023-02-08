@@ -75,3 +75,4 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem "omniauth-rails_csrf_protection"
 gem "bullet"
+gem 'cancancan'
