@@ -30,5 +30,11 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
 
     can :update, Article, user: user
+
+    if user.has_role? :admin?
+      can :manage, :all
+    else
+      can :read, :all
+    end
   end
 end
