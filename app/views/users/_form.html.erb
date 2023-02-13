@@ -26,6 +26,11 @@
     <%= form.number_field :age %>
   </div>
 
+   <div>
+    <%= form.label :avatar, style: "display: block" %>
+    <%= form.file_field :avatar %>
+  </div><br/>
+
   <div>
     <%= form.submit %>
   </div>

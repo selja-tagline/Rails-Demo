@@ -31,6 +31,12 @@
     <%= f.number_field :age, autofocus: true, autocomplete: "age" %>
   </div>
 
+  <div class="field">
+    <%= f.label :avatar %><br />
+    <%= f.file_field :avatar, autofocus: true %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
