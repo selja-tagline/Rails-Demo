@@ -9,13 +9,13 @@
         <%= post.description %>
     </p>
 
-    <p>
+    <%# <p>
        <strong>Post Images:</strong>
        <%= post.images.count %>
-        <% if post.images.attached? %>
-            <% post.images.each do |image| %>
-                <%= image_tag image, width: "150px" %>
-            <% end %>
-        <% end %>
-    </p>
+        <%# <% if post.images.attached? %> 
+            <%# <% post.images.each do |image| %> 
+                <%# <%= image_tag image, width: "150px" %> 
+            <%# <% end %>
+        <%# <% end %> 
+    <%# </p> %>
 </div>
