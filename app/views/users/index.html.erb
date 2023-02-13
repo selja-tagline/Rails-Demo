@@ -11,38 +11,37 @@
     <%= link_to "Sign In", new_user_session_path %>
 <% end %>
 
-<h2>All Users</h2>
 
-<div id="users">
-
-  <table style="border: 1px solid black;">
-    <tbody style="border: 1px solid black;">
-      <tr style="border: 1px solid black;">
-        <th style="border: 1px solid black;">Name</th>
-        <th style="border: 1px solid black;">Email</th>
-        <th style="border: 1px solid black;">Age</th>
-        <th style="border: 1px solid black;">Posts</th>
-        <th style="border: 1px solid black;">Action</th>
-      </tr>
-      <% @users.each do |user| %>
-      <tr style="border: 1px solid black;">
-        <%= render user %>
-          <td style="border: 1px solid black;"><%= link_to "Show this user", user %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
 <br />
-<%= link_to "New user", new_user_path %><br /><br />
+<%= link_to "New user", new_user_registration_path %><br /><br />
 
-<% @users.each do |u| %>
-  <tr>
-    <td><%= u.name %></td>
-    <td><%= u.posts.map(&:name) %></td>
-    <td><%= link_to 'Show', u %></td>
-    <td><%= link_to 'Edit', edit_user_path(u) %></td>
-    <td><%= link_to 'Destroy', u, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr><br /><br />
+<table style="border: 1px solid black;">
+  <tr style="border: 1px solid black;">
+    <th style="border: 1px solid black;">Name</th> 
+    <th style="border: 1px solid black;">Email</th> 
+    <th style="border: 1px solid black;">Age</th> 
+    <th style="border: 1px solid black;">Posts</th> 
+    <th style="border: 1px solid black;">Avatar</th> 
+    <th style="border: 1px solid black;">Actions</th> 
+  </tr>
+
+<% @users.each do |user| %>
+  
+  <tr style="border: 1px solid black;">
+    <td style="border: 1px solid black;"><%= user.name %></td> 
+    <td style="border: 1px solid black;"><%= user.email %></td> 
+    <td style="border: 1px solid black;"><%= user.age %></td> 
+    <td style="border: 1px solid black;"><%= user.posts.map(&:name) %></p></td>
+    <% if user.avatar.attached? %>
+    <td style="border: 1px solid black;"><%= image_tag user.avatar, height:"100px", width:"100px" %></td> 
+    <% else %>
+    <td style="border: 1px solid black;"><%= "NO Image" %></td>
+    <%end %>
+    <td style="border: 1px solid black;">
+      <%= link_to 'Show', user %> ||
+      <%= link_to 'Edit', edit_user_path(user) %> ||
+      <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
 <% end %>
-
+</table>

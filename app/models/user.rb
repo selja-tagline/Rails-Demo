@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :posts
   has_many :articles
 
+  has_one_attached :avatar
+
   def before_add_method(role)
     p ":::::: called before_add_method ::::::"
   end
