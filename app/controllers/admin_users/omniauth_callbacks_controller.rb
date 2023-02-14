@@ -10,8 +10,9 @@ class AdminUsers::OmniauthCallbacksController < Devise::OmniauthCallbacksControl
 
   def facebook
     p "::::: facebook def ::::"
+    p "----------------------"
     p "Omniauth Callback hash: #{auth}"
-    redirect_to root_path, notice: "You Have Successfully Connected to #{auth..info.name}"
+    redirect_to root_path, notice: "You Have Successfully Connected to #{auth.info.name}"
   end
 
   def auth 

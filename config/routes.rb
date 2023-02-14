@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   # root "user#index"
+  resources :admin_users
   devise_for :admin_users
 
-  resources :admin_users
   # get 'admin_users/dashboard', to: 'user#dashboard'
   devise_scope :admin_user do
     # get 'admin_users/', to: 'devise/sessions#new'
