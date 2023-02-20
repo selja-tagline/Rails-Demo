@@ -15,4 +15,10 @@ Rails.application.routes.draw do
     get '/users/sign_out', to: 'devise/sessions#destroy'
     get "/auth/facebook/callback", to: "users/omniauth_callbacks#facebook"
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :posts
+    end
+  end
 end
