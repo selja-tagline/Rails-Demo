@@ -16,9 +16,17 @@ Rails.application.routes.draw do
     get "/auth/facebook/callback", to: "users/omniauth_callbacks#facebook"
   end
 
+  # resources :companies
+
+  # namespace :api do
+  #   namespace :v1 do
+  #     resources :posts
+  #   end
+  # end
+
   namespace :api do
     namespace :v1 do
-      resources :posts
+      resources :companies
     end
   end
 end

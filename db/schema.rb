@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_13_103145) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_21_040658) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -55,6 +55,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_103145) do
     t.integer "commentable_id"
   end
 
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "established_year"
+    t.string "address"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_companies_on_user_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.string "month"
@@ -65,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_103145) do
   create_table "posts", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    Pink Lemon Wat    t.datetime "created_at", null: false
+    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -111,4 +121,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_103145) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "users"
+  add_foreign_key "companies", "users"
 end

@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :articles
+  has_many :companies
 
   has_one_attached :avatar
 
