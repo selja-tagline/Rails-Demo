@@ -78,3 +78,4 @@ gem "bullet"
 gem 'cancancan'
 gem "rolify"
 gem 'rubocop'
+gem 'jsonapi-serializer'

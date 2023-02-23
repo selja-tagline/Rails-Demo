@@ -17,7 +17,8 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post.user_id = current_user.id 
+    # @post.user_id = current_user.id 
+    # @post.user_id = id 
   end
 
   # POST /posts or /posts.json

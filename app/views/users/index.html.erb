@@ -38,8 +38,8 @@
     <td style="border: 1px solid black;"><%= "NO Image" %></td>
     <%end %>
     <td style="border: 1px solid black;">
-      <%= link_to 'Show', user %> ||
-      <%= link_to 'Edit', edit_user_path(user) %> ||
+      <%= link_to "Show", user %> ||
+      <%= link_to 'Edit', edit_user_path(user.id) %> ||
       <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %>
     </td>
   </tr>
