@@ -81,5 +81,3 @@ gem 'rubocop'
 gem 'jsonapi-serializer'
 gem "cocoon"
 gem "pagy"
-gem 'jsbundling-rails' 
-gem 'cssbundling-rails'

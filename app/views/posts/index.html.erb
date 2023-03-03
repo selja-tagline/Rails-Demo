@@ -1,6 +1,7 @@
 <p style="color: green"><%= notice %></p>
 <h1>Posts : <%= @posts.count %>/ <%= Post.count %></h1>
 <%== pagy_nav(@pagy) %>
+<%#== pagy_bootstrap_nav(@pagy) %>
 
 <div id="posts">
   <% @posts.each do |post| %>
