@@ -81,3 +81,5 @@ gem 'rubocop'
 gem 'jsonapi-serializer'
 gem "cocoon"
 gem "pagy"
+gem 'bootstrap', '~> 5.1.3'
+gem 'jquery-rails'

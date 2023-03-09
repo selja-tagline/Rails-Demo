@@ -1,37 +1,39 @@
-<h2>User Details</h2>
+<div class="m-3">
+  <h2>User Details</h2>
 
-<div id="<%= dom_id user %>">
+  <div id="<%= dom_id user %>">
 
-  <table style="border: 1px solid black;">
-    <tbody style="border: 1px solid black;">
-      <tr style="border: 1px solid black;">
-        <th style="border: 1px solid black;">Name</th>
-        <th style="border: 1px solid black;">Email</th>
-        <th style="border: 1px solid black;">Age</th>
-        <th style="border: 1px solid black;">Posts</th>
-        <th style="border: 1px solid black;">Avatar</th>
-      </tr>
-      
-      <tr style="border: 1px solid black;">
-        <%# <%= render user %>
-        <td style="border: 1px solid black;"><%= user.name %></td>
-        <td style="border: 1px solid black;"><%= user.email %></td>
-        <td style="border: 1px solid black;"><%= user.age %></td>                
-        <td style="border: 1px solid black;">
-          <ul>
-            <% user.posts.each do |post| %>
-            
-              <li><%= post.name %></li>
-            <% end %>
-          </ul>
-        </td>
-        <% if user.avatar.attached? %>
-          <td style="border: 1px solid black;"><%= image_tag user.avatar, height:"100px", width:"100px" %></td>
-        <% else %>
+    <table style="border: 1px solid black;">
+      <tbody style="border: 1px solid black;">
+        <tr style="border: 1px solid black;">
+          <th style="border: 1px solid black;">Name</th>
+          <th style="border: 1px solid black;">Email</th>
+          <th style="border: 1px solid black;">Age</th>
+          <th style="border: 1px solid black;">Posts</th>
+          <th style="border: 1px solid black;">Avatar</th>
+        </tr>
+        
+        <tr style="border: 1px solid black;">
+          <%# <%= render user %>
           <td style="border: 1px solid black;"><%= user.name %></td>
-        <% end %>
-      </tr>
-     
-    </tbody>
-  </table>
+          <td style="border: 1px solid black;"><%= user.email %></td>
+          <td style="border: 1px solid black;"><%= user.age %></td>                
+          <td style="border: 1px solid black;">
+            <ul>
+              <% user.posts.each do |post| %>
+              
+                <li><%= post.name %></li>
+              <% end %>
+            </ul>
+          </td>
+          <% if user.avatar.attached? %>
+            <td style="border: 1px solid black;"><%= image_tag user.avatar, height:"100px", width:"100px" %></td>
+          <% else %>
+            <td style="border: 1px solid black;"><%= user.name %></td>
+          <% end %>
+        </tr>
+      
+      </tbody>
+    </table>
+  </div>
 </div>
