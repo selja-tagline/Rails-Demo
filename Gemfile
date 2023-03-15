@@ -84,3 +84,5 @@ gem "pagy"
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
 gem 'draper'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
