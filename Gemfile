@@ -82,3 +82,5 @@ gem 'jsonapi-serializer'
 gem "cocoon"
 gem "pagy"
 gem 'draper'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
