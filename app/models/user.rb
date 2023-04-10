@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :articles
+  has_many :friendships
+  has_many :friends, through: :friendships
 
   def before_add_method(role)
     p ":::::: called before_add_method ::::::"
