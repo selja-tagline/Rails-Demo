@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  paginates_per 2
+
   rolify :before_add => :before_add_method
   after_create :assign_default_role
   # attr_accessor :id, :name, :age, :email
