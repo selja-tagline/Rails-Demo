@@ -22,6 +22,11 @@
   </div>
 
   <div>
+    <%= form.label :password, style: "display: block" %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div>
     <%= form.label :age, style: "display: block" %>
     <%= form.number_field :age %>
   </div>
@@ -30,6 +35,11 @@
     <%= form.label :avatar, style: "display: block" %>
     <%= form.file_field :avatar %>
   </div><br/>
+
+  <div>
+    <%= form.label :avatar, style: "display: block" %>
+    <%= form.file_field :avatar %>
+  </div>
 
   <div>
     <%= form.submit %>
