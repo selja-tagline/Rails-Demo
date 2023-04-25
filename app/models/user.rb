@@ -14,7 +14,6 @@ class User < ApplicationRecord
   has_many :friendships
   has_many :friends, through: :friendships
   has_one_attached :avatar
-  has_many_attached :events_image
 
   def before_add_method(role)
     p ":::::: called before_add_method ::::::"
