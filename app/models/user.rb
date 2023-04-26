@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  paginates_per 5
+
   rolify :before_add => :before_add_method
   after_create :assign_default_role
   # attr_accessor :id, :name, :age, :email
@@ -11,6 +13,7 @@ class User < ApplicationRecord
   has_many :articles
   has_many :friendships
   has_many :friends, through: :friendships
+  has_one_attached :avatar
 
   def before_add_method(role)
     p ":::::: called before_add_method ::::::"

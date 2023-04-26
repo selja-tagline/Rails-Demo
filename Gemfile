@@ -86,3 +86,5 @@ gem 'jquery-rails'
 gem 'draper'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'kaminari'
+gem "image_processing"
