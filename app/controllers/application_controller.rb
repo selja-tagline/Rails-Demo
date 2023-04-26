@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+    include Pagy::Backend
     # before_action :authenticate_user!
     # before_filter :configure_permitted_parameters, if: :devise_controller?
     before_action :configure_permitted_parameters, if: :devise_controller?
@@ -19,7 +20,7 @@ class ApplicationController < ActionController::Base
     # end
 
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation, :remember_me, :age) }
+        devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation, :remember_me, :age, :avatar) }
         devise_parameter_sanitizer.permit(:sign_in) { |u| u.permit(:name, :password, :remember_me) }
         # devise_parameter_sanitizer.permit(:account_update) { |u| u.permit( :name, :email, :password, :password_confirmation, :current_password) }
     end
