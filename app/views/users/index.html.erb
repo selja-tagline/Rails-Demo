@@ -1,27 +1,14 @@
 <div class="m-3">
   <p style="color: green"><%= notice %></p>
-
   <% if user_signed_in? %>
       <h1>Hello,   <%= current_user.name %></h1>
       <h3>You're <%= current_user.roles.pluck(:name) %></h3>
       <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete } %>
-
   <% else %>
       <h1>Hello, </h1>
       <h3>Want to Sign in???</h3>
       <%= link_to "Sign In", new_user_session_path %>
   <% end %>
-
-
-<% if user_signed_in? %>
-    <h1>Hello,   <%= current_user.name %></h1>
-    <h3>You're <%= current_user.roles.pluck(:name) %></h3>
-    <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete } %>
-<% else %>
-    <h1>Hello, </h1>
-    <h3>Want to Sign in???</h3>
-    <%= link_to "Sign In", new_user_session_path %>
-<% end %>
 
 <h2>All Users</h2>
 <%= paginate @users %> <%# kaminari gem method %>
@@ -49,14 +36,5 @@
 <br />
 <%= link_to "New user", new_user_path %><br /><br />
 
-<% @users.each do |u| %>
-  <tr>
-    <td><%= u.name %></td>
-    <td><%= u.posts.map(&:name) %></td>
-    <td><%= link_to 'Show', u %></td>
-    <td><%= link_to 'Edit', edit_user_path(u) %></td>
-    <td><%= link_to 'Destroy', u, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr><br /><br />
-<% end %>
 
 
