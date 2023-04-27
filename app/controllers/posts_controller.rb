@@ -5,7 +5,8 @@ class PostsController < ApplicationController
   def index
     p ":::: Post Index called ::::"
 
-    @posts = Post.all
+    # @posts = Post.all
+    @pagy, @posts = pagy(current_user.posts)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -70,6 +71,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:name, :description, :user_id)
+      params.require(:post).permit(:name, :description, :user_id,  banners: [])
     end 
 end

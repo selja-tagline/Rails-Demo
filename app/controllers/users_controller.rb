@@ -9,12 +9,13 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1 or /users/1.json
-  def show
+  def show  
   end
 
   # GET /users/new
   def new
     @user = User.new
+    p ':::::::: New Action Call ::::::::'
   end
 
   # GET /users/1/edit
@@ -23,10 +24,12 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-    @user = User.new(user_params)
+    p ':::::::: User Create Action Call ::::::::'
+    @user = User.new(user_params)    
 
     respond_to do |format|
       if @user.save
+        UserMailer.welcome_email(@user).deliver_now
         format.html { redirect_to user_url(@user), notice: "User successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
@@ -38,8 +41,11 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
+    p ':::::::: Update Action Call ::::::::'    
+    
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.update(user_params)        
+
         format.html { redirect_to user_url(@user), notice: "User successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else

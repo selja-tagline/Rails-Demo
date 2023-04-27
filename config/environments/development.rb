@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   config.after_initialize do
-    Bullet.enable        = true
+    Bullet.enable        = false
     Bullet.alert         = true
     Bullet.bullet_logger = true
     Bullet.console       = true
@@ -78,4 +78,26 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  #-----------Configuration for Gmail-----
+  config.action_mailer.delivery_method = :sendmail
+  # Defaults to:
+  # config.action_mailer.sendmail_settings = {
+  #   location: '/usr/sbin/sendmail',
+  #   arguments: '-i'
+  # }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = {from: 'dev2pacifica@gmail.com'} 
+
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.elasticemail.com',
+  port:                 587,
+  domain:               'demo-project',
+  user_name:            'dev2pacifica@gmail.com',
+  password:             'E16D19B0F2B8896E230AE135C237155785F6',
+  authentication:       'plain',
+  enable_starttls_auto: true  }
 end
