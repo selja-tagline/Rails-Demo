@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     p ":::: Post Index called ::::"
 
     # @posts = Post.all
-    @pagy, @posts = pagy(current_user.posts)
+    @pagy, @posts = pagy(Post.all)
   end
 
   # GET /posts/1 or /posts/1.json
